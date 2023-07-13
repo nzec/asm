@@ -7,9 +7,9 @@ A few assembly programs I have written.<br>
 Most use x86-64 conventions and Linux syscalls.<br>
 To run them, do the following:
 ```bash
-as hello.s -o hello.o # assembling
-ld hello.o -o hello   # linking
-./hello
+as hello.s -o hello.o # assembe
+ld hello.o -o hello   # link
+./hello               # run
 ```
 If they require extra steps, there is probably a Makefile in the folder.<br>
 
@@ -23,7 +23,7 @@ sudo apt install gcc-12-arm-linux-gnueabi   # for cross-compiling to ARMel
 sudo apt install gcc-12-arm-linux-gnueabihf # for cross-compiling to ARMhf
 sudo apt install qemu-user     # for emulating
 sudo apt install gdb-multiarch # for debugging
-``` 
+```
 
 To run them, do the following:
 ```bash
