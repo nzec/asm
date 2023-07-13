@@ -1,9 +1,37 @@
 # asm
 
-A few assembly programs (GNU Assmbler) I have written.
-Most use x86-64 conventions and Linux syscalls.
-Most can be assembled (`as a.s -o a.o`), linked (`ld a.o -o a.out`) and run (`./a.out`).
-If they require extra steps, there is probably a Makefile in the folder.
+A few assembly programs I have written.<br>
+
+### x86
+
+Most use x86-64 conventions and Linux syscalls.<br>
+To run them, do the following:
+```bash
+as hello.s -o hello.o # assembling
+ld hello.o -o hello   # linking
+./hello
+```
+If they require extra steps, there is probably a Makefile in the folder.<br>
+
+### ARM
+
+Assumes Linux running on a ARMel/ARMhf system.<br>
+To cross-compile and emulate, install the following:
+
+```bash
+sudo apt install gcc-12-arm-linux-gnueabi   # for cross-compiling to ARMel
+sudo apt install gcc-12-arm-linux-gnueabihf # for cross-compiling to ARMhf
+sudo apt install qemu-user     # for emulating
+sudo apt install gdb-multiarch # for debugging
+``` 
+
+To run them, do the following:
+```bash
+make run TARGET=hello   # run
+make gdb TARGET=hello   # debug using gdb
+make gef TARGET=hello   # debug using gef (if installed)
+make clean TARGET=hello # remove .o and .out files
+```
 
 ## Bare Metal / Operating Systems
 
@@ -82,3 +110,4 @@ If they require extra steps, there is probably a Makefile in the folder.
 
 - [Let's Build a Compiler - Crenshaw](https://compilers.iecc.com/crenshaw/)
 - [Build Your Own Lisp](http://www.buildyourownlisp.com/)
+
